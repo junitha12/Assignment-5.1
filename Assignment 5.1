@@ -1,0 +1,19 @@
+1. How many vowels are there in the names of USA States?
+
+Answer for 1:
+library(stringi)
+library(stringr)
+USstates<-rownames(USArrests)
+> sum(str_count(USstates,'a|A|e|E|i|I|o|O|u|U'))
+[1] 177
+
+2. Visualize the vowels distribution.
+library(stringi)
+library(stringr)
+USstates<-rownames(USArrests)
+graph<-c(sum(str_count(USstates,'a|A')),sum(str_count(USstates,'e|E')),
+  sum(str_count(USstates,'i|I')), sum(str_count(USstates,'o|O'))
+  ,sum(str_count(USstates,'u|U')))            
+barplot(graph,main="Vowels distribution",col="red")
+
+Barplot attached as separate jpeg file-Assignment 5.1_ques_2_barplot. Please refer.
